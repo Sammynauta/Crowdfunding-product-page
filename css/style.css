@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Commissioner', sans-serif;
+}
+header {
+    background-image: url(/images/image-hero-desktop.jpg);
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.logo {
+    padding: 5px;
+    margin: 3px;
+}
+
+.menu-list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+}
+
+.menu-list ul {
+    display: flex;
+    list-style: none;
+    color: white;
+}
+
+.menu-list li a {
+    letter-spacing: 3px;
+    list-style: none;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 400;
+}
+.menu-mobile {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: url(/images/icon-hamburger.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: 0.3s;
+    display: none;
+}
+
+#hamburguer:checked + .hamburguer .menu-mobile {
+    background: url(/images/icon-close-menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#hamburguer {
+    display: none;
+}
+main {
+    position: relative;
+    background: hsl(0, 0%, 93%);
+    width: 100%;
+}
+.logo-m {
+    position: relative;
+    top: -30px;
+}
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    padding: 10px;
+    border-radius: 7px;
+    margin: 10px;
+}
+.master {
+    position: relative;
+    top: -60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.master h3 {
+    color: black;
+    font-weight: 700;
+}
+.master span {
+    color: gray;
+}
+.botoes {
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-around;
+    width: 100%;
+}
+.botoes button {
+    border: none;
+    padding: 5px 20px;
+    border-radius: 30px;
+    background: darkcyan;
+    color: white;
+}
+.checkbox {
+    display: none;
+}
+.switch {
+    display: flex;
+    align-items: center;
+    background: darkcyan;
+    width: 140px;
+    border-radius: 30px;
+}
+.cash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.prices {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.prices h3 {
+    font-weight: 700;
+}
+.prices p {
+    color: gray;
+    font-weight: 500;
+    font-size: 16px;
+}
+.linha-vertical {
+    height: 60px;/*Altura da linha*/
+    border-left: 1px solid;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
+    color: rgb(190, 190, 190);
+}
+.barra {
+    width: 90%;
+    height: 15px;
+    background: hsl(240, 2%, 89%);
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+.fill{
+    height: 15px;
+    border-radius: 30px;
+    width: 85%;
+    background: darkcyan;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.text-about {
+    justify-content: center;
+    align-items: center;
+    display: block;
+    margin: 15px; 
+    width: 90%;
+}
+.text-about h5{
+    font-weight: 700;
+    color: black;
+    margin-bottom: 20px;
+}
+.cards {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gainsboro;
+    border-radius: 10px;
+    width: 90%;
+    margin-bottom: 10px;
+}
+.title-card {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px;
+}
+.title-card h5 {
+    font-weight: 700;
+    color: black;
+}
+.title-card span {
+    color: darkcyan;
+    font-size: 16px;
+    font-weight: 500;
+}
+.text-conteudo  {
+    display: block;
+    margin: 8px;
+}
+.btn-card {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+.btn-card p span {
+    color: gray;
+    font-size: 14px;
+    font-weight: 500;
+}
+.btn-card p {
+    color: black;
+    font-weight: 700;
+    font-size: 25px;
+}
+.btn-card button {
+    border: none;
+    background: darkcyan;
+    color: white;
+    border-radius: 30px;
+    width: 150px;
+    height: 45px;
+    font-size: 14px;
+}
+
+.card-1 .btn-card button:hover, .card-2 .btn-card button:hover {
+    cursor: pointer;
+    background: rgb(0, 177, 177);
+}
+
+.card-3 {
+    opacity: 0.35;
+    cursor: default;
+}
+.card-3 .btn-card button {
+    cursor: default;
+    background: rgb(151, 151, 151);
+}
+
+@media (max-width: 576px) {
+    #mobile {
+        position: absolute;
+        display: block;
+        border-radius: 10px;
+        background: white;
+        top: 90%;
+        right: 5%;
+        padding: 30px 10px;
+        width: 90%;
+        opacity: 0;
+        transition: 0.3s;
+    }
+    #mobile a {
+        color: black;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    #mobile li:hover {
+        background: gray;
+    }
+    #mobile.active {
+        opacity: 1;
+    }
+    .menu-mobile{
+        display: flex;
+        right: -80px;
+    }
+}
