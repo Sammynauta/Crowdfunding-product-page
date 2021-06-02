@@ -47,6 +47,10 @@ header {
     text-decoration: none;
     padding: 5px;
     font-weight: 400;
+    transition: 0.6s
+}
+.menu-list li a:hover {
+    opacity: 0.5;
 }
 .menu-mobile {
     width: 40px;
@@ -109,10 +113,14 @@ main {
 }
 .botoes button {
     border: none;
-    padding: 5px 20px;
+    padding: 0px 10px;
     border-radius: 30px;
     background: darkcyan;
     color: white;
+    transition: 0.6s
+}
+.botoes button:hover {
+    background: rgb(0, 187, 187);
 }
 .checkbox {
     display: none;
@@ -120,9 +128,21 @@ main {
 .switch {
     display: flex;
     align-items: center;
-    background: darkcyan;
-    width: 140px;
+    background: rgb(216, 216, 216);
+    height: 45px;
+    width: 150px;
     border-radius: 30px;
+    justify-content: start;
+}
+.switch img {
+    height: 45px;
+    width: 45px;
+}
+.switch p {
+    margin-top: 8px;
+    margin-left: 10px;
+    font-weight: 700;
+    color: rgb(112, 112, 112);
 }
 .cash {
     display: flex;
@@ -231,6 +251,7 @@ main {
     width: 150px;
     height: 45px;
     font-size: 14px;
+    transition: 0.6s;
 }
 
 .card-1 .btn-card button:hover, .card-2 .btn-card button:hover {
@@ -247,7 +268,148 @@ main {
     background: rgb(151, 151, 151);
 }
 
+/* START---------- MODAL*/
+
+.modal-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-container.active {
+    pointer-events: auto;
+    top: 0;
+    left: 0;
+}
+.modal-container.active .backdrop {
+    opacity: 1;
+}
+.modal-container.active .content {
+    top: 0%;
+}
+.backdrop {
+    background: hsla(0, 0%, 0%, 0.651);
+    height: 150%;
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition:  0.3s ease-out;
+    z-index: 1;
+}
+.content {
+    background: white;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    transition: top 0.4s ease-out;
+    top: 100%;
+    z-index: 2;
+}
+
+.cards-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+.close-modal {
+    position: absolute;
+    right: 50px;
+    top: 10px;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 3;
+}
+.modal-title {
+    display: block;
+}
+.modal-title h4 {
+    font-weight: 700;
+    color: black;
+    font-size: 20px;
+}
+.modal-title span {
+    font-weight: 500;
+    color: gray;
+}
+.boxcard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 81%);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.cardmd-4 {
+    pointer-events: none;
+    opacity: 0.50;
+}
+.text-modal {
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(146, 146, 146);
+}
+.custom-radio-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgb(185, 185, 185);
+    cursor: pointer;
+    margin-right: 3px;
+}
+.custom-radio-btn input {
+    display: none;
+}
+.custom-radio-btn .circle {
+    content: "";
+    background-color: darkcyan;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: relative;
+    top: -3px;
+    left: 1px;
+    display: none;
+}
+.custom-radio-btn input:checked + .circle {
+    display: inline-block;
+}
+.ops {
+    display: flex;
+    padding: 5px;
+    width: 100%;
+}
+.ops span {
+    display: flex;
+    color: black;
+    font-weight: 700;
+    margin-right: 5px;
+}
+.ops span:hover {
+    color: darkcyan;
+}
+.ops p {
+    color: darkcyan;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0px;
+}
+
 @media (max-width: 576px) {
+    header {
+        background-image: url(/images/image-hero-mobile.jpg);
+        background-position: center;
+        height: 300px;
+    }
     #mobile {
         position: absolute;
         display: block;
@@ -258,7 +420,7 @@ main {
         padding: 30px 10px;
         width: 90%;
         opacity: 0;
-        transition: 0.3s;
+        
     }
     #mobile a {
         color: black;
@@ -266,13 +428,57 @@ main {
         font-weight: 600;
     }
     #mobile li:hover {
-        background: gray;
+        background: rgb(190, 190, 190);
     }
     #mobile.active {
         opacity: 1;
+        transition: 0.3s;
     }
     .menu-mobile{
         display: flex;
         right: -80px;
+    }
+    .botoes button {
+        font-size: 12px;
+    }
+    .switch {
+        width: 100px;
+        height: 30px;
+    }
+    .switch img {
+        width: 30px;
+        height: 30px;
+    }
+    .switch p {
+        font-size: 14px;
+        margin: 0px;
+    }
+
+    /*START --- MODAL*/
+    .modal-title h4 {
+        font-size: 14px;
+    }
+    .modal-title span {
+        font-size: 14px;
+        font-weight: 700;
+    }
+    
+    .ops span {
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .ops p {
+        font-size: 13px;
+    }
+
+    .custom-radio-btn {
+        width: 18px;
+        height: 18px;
+    }
+    .custom-radio-btn .circle {
+        width: 12px;
+        height: 12px;
+        top: -6px;
+        left: 1px;
     }
 }
